@@ -2,24 +2,6 @@
 
 Predict whether a character from A Song of Ice and Fire will stay alive based on their attributes.
 
-📂 Project structure
-
-got-survival/
-├ data/
-│   ├ raw/                # original full‑size CSVs (ignored by Git)
-│   ├ processed/          # train/test splits saved by the pipeline
-│   └ sample/             # light demo dataset that *is* tracked in Git
-├ src/
-│   ├ pipeline.py         # training & evaluation script
-│   ├ viz.py              # quick visualisations
-│   ├ __init__.py         # makes `src` an importable package
-│   └ __main__.py         # allows `python -m got_survival ...`
-├ tests/                  # pytest-based sanity checks
-├ requirements.txt        # project dependencies (see below)
-├ README.md               # ← you are here
-├ .gitignore              # files to exclude from version control
-└ LICENSE
-
 🚀 Quickstart
 
 git clone https://github.com/yourname/got-survival.git
@@ -56,13 +38,3 @@ matplotlib>=3.9
 seaborn>=0.13
 
 Freeze only what you import directly; transitive packages will be pulled automatically.Pin exact versions (==) later, e.g. when you start CI or need reproducibility.
-
-🤖 Tests
-
-pytest -q
-
-The smoke‑test in tests/test_pipeline.py just make sure the pipeline runs end‑to‑end on the small sample.
-
-📜 License
-
-MIT
