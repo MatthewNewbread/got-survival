@@ -12,7 +12,7 @@ The script performs:
 
 Add or swap models in `build_pipelines()` – the rest of the code stays unchanged.
 """
-from __fututre__ import annotations
+from __future__ import annotations
 
 import argparse
 from pathlib import Path
