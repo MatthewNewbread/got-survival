@@ -95,6 +95,10 @@ def run_experiment(X, y):
         X, y, test_size=TEST_SIZE, stratify=y, random_state=RANDOM_STATE
     )
 
+    Path("data/processed").mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(X_train, columns=X.columns).to_csv("data/processed/train.csv", index=False)
+    pd.DataFrame(X_test,  columns=X.columns).to_csv("data/processed/test.csv",  index=False)
+    
     for name, pipeline in build_pipelines().items():
         pipeline.fit(X_train, y_train)
         preds = pipeline.predict(X_test)
@@ -109,9 +113,6 @@ def main():
 
     X, y = load_data(args.csv)
     run_experiment(X, y)
-    Path("data/processed").mkdir(parents=True, exist_ok=True)
-    X_train.to_csv("data/processed/train.csv", index=False)
-    X_test.to_csv("data/processed/test.csv",  index=False)
 
 if __name__ == "__main__":
     main()
